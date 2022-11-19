@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { rmdirSync } = require('fs');
 const {User, Post} = require('../../models');
 
 // GET/api/users
