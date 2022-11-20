@@ -1,15 +1,10 @@
-<article class="post">
-    <div class="title">
-        <a href="/post/{{id}}">
-            <h1 class="cardHeader">{{title}}</h1>
-        </a>
-        <div class="meta">
-            <p>Posted by
-                {{user.username}}
-                on
-                {{format_date createdAt}}</p>
-            <p>{{comments.length}}
-                {{format_plural "comment" comments.length}}</p>
+<article>
+    <div class="post">
+        <a href="/post/{{id}}"><h1 class="cardHeader">{{title}}</h1></a>
+        <div class="cardBody">
+            <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+            <p>{{body}}</p>
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
         </div>
     </div>
 

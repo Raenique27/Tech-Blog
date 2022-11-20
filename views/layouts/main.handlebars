@@ -5,32 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
-    <div class="wrapper">
-        <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-        </nav>
-         <header>
-            <h1>
-                <a href="/">Tech Blog</a>
-            </h1>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            &copy; Tech Blog
-        </footer>
-    </div>
+<body class="flex-column min-100-vh">
+    <nav class="navbar">
+        {{#if loggedIn}}
+        <ul class="nav">
+            <li class="li-inline nav-item"><a href="/">Home</a></li>
+            <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+            <li class="li-inline nav-item"><a href="#" id="logout">Logout</a></li>
+            {{else}}
+            <li class="li-inline nav-item"><a href="/login">Login</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 class="blog-title">
+            Tech Blog
+        </h1>
+    </header>
+    <main class="col-auto">
+        {{{ body }}}
+    </main>
+    <footer class="flex-row justify-center">
+        &copy; Tech Blog
+    </footer>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
